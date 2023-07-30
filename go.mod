@@ -4,9 +4,12 @@ go 1.20
 
 require (
 	github.com/99designs/gqlgen v0.17.36
+	github.com/dgrijalva/jwt-go v3.2.0+incompatible
+	github.com/go-chi/chi v1.5.4
 	github.com/go-sql-driver/mysql v1.5.0
 	github.com/golang-migrate/migrate v3.5.4+incompatible
 	github.com/vektah/gqlparser/v2 v2.5.8
+	golang.org/x/crypto v0.11.0
 )
 
 require (
@@ -24,5 +27,4 @@ require (
 	github.com/opencontainers/image-spec v1.0.2 // indirect
 	github.com/pkg/errors v0.9.1 // indirect
 	github.com/sirupsen/logrus v1.9.2 // indirect
-	golang.org/x/net v0.10.0 // indirect
 )
