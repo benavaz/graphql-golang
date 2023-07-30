@@ -5,6 +5,8 @@ import (
 	"net/http"
 	"os"
 
+	database "github.com/benavaz/graphql-golang/internal/pkg/db/mysql"
+
 	"github.com/99designs/gqlgen/graphql/handler"
 	"github.com/99designs/gqlgen/graphql/playground"
 	"github.com/benavaz/graphql-golang/graph"
@@ -17,6 +19,10 @@ func main() {
 	if port == "" {
 		port = defaultPort
 	}
+
+	database.InitDB()
+	defer database.CloseDB()
+	database.Migrate()
 
 	srv := handler.NewDefaultServer(graph.NewExecutableSchema(graph.Config{Resolvers: &graph.Resolver{}}))
 
